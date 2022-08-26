@@ -1,0 +1,28 @@
+{
+  "name": "typeorm-seeding-cli-error",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:foliveirafilho/typeorm-seeding-cli-error.git",
+  "author": "foliveirafilho <franciscofilho1109@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migration-gen": "yarn typeorm migration:generate -p -d src/data-source.ts src/migrations/create-user",
+    "migration-undo": "yarn typeorm migration:revert -d src/data-source.ts",
+    "migration-run": "yarn typeorm migration:run -d src/data-source.ts",
+    "seed-run": "typeorm-seeding seed"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.4.0",
+    "@jorgebodega/typeorm-factory": "1.2.0",
+    "@jorgebodega/typeorm-seeding": "5.0.1",
+    "@types/node": "^18.7.13",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.2"
+  },
+  "dependencies": {
+    "mysql2": "^2.3.3",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "0.3.7"
+  }
+}
