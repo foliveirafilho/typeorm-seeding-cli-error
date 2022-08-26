@@ -1,12 +1,12 @@
 import { faker } from '@faker-js/faker';
-import { Constructable, FactorizedAttrs, Factory } from '@jorgebodega/typeorm-factory';
-import { DataSource } from 'typeorm';
+import { FactorizedAttrs, Factory } from '@jorgebodega/typeorm-factory';
+import { DbDataSource } from './data-source';
 import { UserEntity } from './user.entity';
 
 export class UserFactory extends Factory<UserEntity> {
-  protected entity: Constructable<UserEntity>;
+  protected entity = UserEntity;
 
-  protected dataSource: DataSource;
+  protected dataSource = DbDataSource;
 
   protected attrs(): FactorizedAttrs<UserEntity> {
     return {
